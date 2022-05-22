@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="#">
+
+    <script type="text/javascript" src="app.js"></script>
+
+    <title>HigherLowerGameKpopVer</title>
+</head>
+
+<body>
+    <h1 id="demo"></h1>
+    <p id="score">Score: 0</p>
+
+    <div id="choices-wrapper">
+        <div class="choices" id="choice-1" onclick="choice_clicked(this, event, 1)">
+            <img class="thumbnail" alt="thumbnail for choice 1">
+            <p class="title"></p>
+            <p class="viewCount">VIEWS</p>
+        </div>
+        <div class="choices" id="choice-2" onclick="choice_clicked(this, event, 2)">
+            <img class="thumbnail" alt="thumbnail for choice 2">  
+            <p class="title"></p>
+            <p class="viewCount">VIEWS</p>
+        </div>
+    </div>
+    <div id="game_over_screen">
+        <h1>GAME OVER</h1>
+    </div>
+
+    <footer>
+        <a href="index.html" class="back-btn">back</a>
+        <a href="#" class="credits-btn">credits</a>
+    </footer>
+</body>
+</html>

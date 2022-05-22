@@ -1,0 +1,224 @@
+//import font from google fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+//color variables
+$black: #000;
+$pink: #f4a7bb;
+$purple: #a700a7;
+
+//pastel colors for grad (https://www.schemecolor.com/pastel-pretty-galaxy-gradient.php)
+$color-grad1: #C3C1E6;
+$color-grad2: #D2C6E8;
+$color-grad3: #E1CCEB;
+$color-grad4: #F0D1ED;
+$color-grad5: #FFD6EF;
+
+//other variables
+$basic-border: 0.5rem solid $pink;
+
+//font
+$basic-font: 'Roboto', sans-serif;
+
+//function for button background
+@mixin button-bg($bg) {
+    background: $bg;
+
+    &:hover {
+        background:darken($bg, 8%);
+        transition: all 0.3s ease;
+    }
+
+    &:active {
+        background: darken($bg, 25%);
+    }
+}
+
+body {
+    background-image: linear-gradient(
+        to right,
+        $color-grad1,
+        $color-grad2,
+        $color-grad3,
+        $color-grad4,
+        $color-grad5
+        );
+
+    font-family: $basic-font;
+    font-weight: normal;
+
+    #score {
+        font-size: 22px;
+    }
+    
+}
+
+#choices-wrapper {
+
+    position: absolute;
+
+    width: 100%;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    //border: $basic-border;
+
+    .choices {
+        border: 2px solid $black;
+        border-radius: 15px;
+    
+        display: inline-block;
+        text-align: center;
+    
+        padding: 1rem;
+        margin: 1rem 5rem;
+    
+        img {
+            width: 400px;
+            height: auto;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .viewCount {
+            margin-bottom: 0;
+            visibility: hidden;
+        }
+
+        &:hover {
+            border-color: $purple;
+
+            cursor: pointer;
+            
+        }
+
+    }
+
+}
+
+#game_over_screen {
+    $border: 3px solid $purple;
+
+    border-top: $border;
+    border-bottom: $border;
+
+    color: $color-grad2;
+    font-size: larger;
+
+    background-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.9),
+        rgba(0,0,0,0.9),
+        rgba(0,0,0,0.5),
+    );
+
+    position: absolute;
+
+    height: 200px;
+    width: 100%;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    visibility: hidden;
+        
+}
+
+
+
+footer {
+    position: fixed;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    
+    height: 20px;
+    bottom: 5px;
+    left: 8px;
+    right: 8px;
+    
+    margin-bottom: 0px;
+
+    .credits-btn {
+        color: $black;
+    }
+    
+    .back-btn {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        
+        color: $black;
+    
+    }
+
+}
+
+
+
+.startScreen {
+    color: $pink;
+    font-size: 30px;
+    background-color: $black;
+    text-align: center;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 5rem;
+
+    border-bottom: $basic-border;
+    border-top: $basic-border;
+
+    .play-button {
+        //use button-bg function
+        @include button-bg($pink);
+    
+        color: $black;
+        text-decoration: none;
+        padding: 5px 10px;
+        border: 3px solid white;
+    }
+}
+
+
+
+//we use responsive web design :D
+
+@media screen and (max-width: 800px) {
+
+    body {
+        height: 100%;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        background-image: linear-gradient(
+        $color-grad1,
+        $color-grad2,
+        $color-grad3,
+        $color-grad4,
+        $color-grad5
+        );
+    }
+
+    .startScreen {
+        width: 100%;
+        border: none;
+
+        font-size: 3.5vw;
+    }
+
+}

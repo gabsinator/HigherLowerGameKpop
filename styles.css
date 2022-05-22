@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(#C3C1E6), color-stop(#D2C6E8), color-stop(#E1CCEB), color-stop(#F0D1ED), to(#FFD6EF));
+  background-image: linear-gradient(to right, #C3C1E6, #D2C6E8, #E1CCEB, #F0D1ED, #FFD6EF);
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+body #score {
+  font-size: 22px;
+}
+
+#choices-wrapper {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#choices-wrapper .choices {
+  border: 2px solid #000;
+  border-radius: 15px;
+  display: inline-block;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem 5rem;
+}
+
+#choices-wrapper .choices img {
+  width: 400px;
+  height: auto;
+}
+
+#choices-wrapper .choices .title {
+  font-weight: bold;
+}
+
+#choices-wrapper .choices .viewCount {
+  margin-bottom: 0;
+  visibility: hidden;
+}
+
+#choices-wrapper .choices:hover {
+  border-color: #a700a7;
+  cursor: pointer;
+}
+
+#game_over_screen {
+  border-top: 3px solid #a700a7;
+  border-bottom: 3px solid #a700a7;
+  color: #D2C6E8;
+  font-size: larger;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), color-stop(rgba(0, 0, 0, 0.9)), color-stop(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.5)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+}
+
+footer {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 20px;
+  bottom: 5px;
+  left: 8px;
+  right: 8px;
+  margin-bottom: 0px;
+}
+
+footer .credits-btn {
+  color: #000;
+}
+
+footer .back-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #000;
+}
+
+.startScreen {
+  color: #f4a7bb;
+  font-size: 30px;
+  background-color: #000;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 5rem;
+  border-bottom: 0.5rem solid #f4a7bb;
+  border-top: 0.5rem solid #f4a7bb;
+}
+
+.startScreen .play-button {
+  background: #f4a7bb;
+  color: #000;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 3px solid white;
+}
+
+.startScreen .play-button:hover {
+  background: #ef839f;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.startScreen .play-button:active {
+  background: #e63663;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#C3C1E6), color-stop(#D2C6E8), color-stop(#E1CCEB), color-stop(#F0D1ED), to(#FFD6EF));
+    background-image: linear-gradient(#C3C1E6, #D2C6E8, #E1CCEB, #F0D1ED, #FFD6EF);
+  }
+  .startScreen {
+    width: 100%;
+    border: none;
+    font-size: 3.5vw;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
