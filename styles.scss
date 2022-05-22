@@ -107,7 +107,7 @@ body {
     border-bottom: $border;
 
     color: $color-grad2;
-    font-size: larger;
+    font-size: 2rem;
 
     background-image: linear-gradient(
         to right,
@@ -131,6 +131,36 @@ body {
     align-items: center;
 
     visibility: hidden;
+
+    #wrapper {
+
+        font-size: large;
+
+        color: white;
+        text-align: center;
+        position: absolute;
+
+        width: 370px;
+        bottom: 0px;
+
+        display: inline-flex;
+        justify-content : space-around;
+    }
+
+    #wrapper > * {
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 4px 6px;
+    }
+
+    #play_again_btn {
+        &:hover {
+            border-color: $purple;
+            color: $purple;
+
+            cursor: pointer;
+        }
+    }
         
 }
 

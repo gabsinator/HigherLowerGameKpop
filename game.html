@@ -14,7 +14,7 @@
 
 <body>
     <h1 id="demo"></h1>
-    <p id="score">Score: 0</p>
+    <p class="score-counter" id="score">Score: 0</p>
 
     <div id="choices-wrapper">
         <div class="choices" id="choice-1" onclick="choice_clicked(this, event, 1)">
@@ -30,6 +30,10 @@
     </div>
     <div id="game_over_screen">
         <h1>GAME OVER</h1>
+        <div id="wrapper">
+            <p class="score-counter" id="game_over_score">Your Score: 0</p>
+            <p id="play_again_btn" onclick="main()">TRY AGAIN!</p>
+        </div>
     </div>
 
     <footer>
