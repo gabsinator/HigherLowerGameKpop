@@ -80,6 +80,7 @@ window.onload = function() {
             var div = document.getElementById(choice);
             var viewcount = div.getElementsByClassName("viewCount")[0];
             viewcount.style.visibility = "hidden";
+            document.getElementById("checkmark").style.display = "none";
 
             var choices = document.getElementsByClassName('choices');
 
@@ -173,6 +174,8 @@ window.onload = function() {
                 score_counters[i].innerHTML = `Score: ${score}`;
             }
 
+            document.getElementById("checkmark").style.display = "block";
+
             await delay(3000);
 
             //load new MV for choice with less views
@@ -238,8 +241,8 @@ window.onload = function() {
 
             if(!played) {
 
-                //you played already
-                played = true;
+                
+                
 
                 //if strg is pressed open MV link
                 if(check_control(event)) {
@@ -253,6 +256,9 @@ window.onload = function() {
                     openInNewTab(link);
                 }
                 else {
+                    //you played already
+                    played = true;
+
                     let title = choice_div.getElementsByClassName("title")[0].innerHTML;
                     document.getElementById("demo").innerHTML = title;
 

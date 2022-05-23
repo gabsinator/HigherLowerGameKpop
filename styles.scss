@@ -5,6 +5,7 @@
 $black: #000;
 $pink: #f4a7bb;
 $purple: #a700a7;
+$check-green:  #77DD77;
 
 //pastel colors for grad (https://www.schemecolor.com/pastel-pretty-galaxy-gradient.php)
 $color-grad1: #C3C1E6;
@@ -222,6 +223,65 @@ footer {
         border: 3px solid white;
     }
 }
+//code for checkmark and animation
+
+#check-wrapper {
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    display: inline-block;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#checkmark {
+    display: none;
+
+    position: relative;
+    content: '';
+
+    width: 56px;
+    height: 112px;
+
+    top: 50%;
+    left: 56px;
+
+
+    border-top: 12px solid $check-green;
+    border-right: 12px solid $check-green;
+
+    transform: scaleX(-1) rotate(135deg);
+
+    transform-origin: left top;
+    animation: check 1s ease;
+}
+@keyframes check {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 1;
+    }
+    20% {
+        width: 56px;
+        height: 0px;
+        opacity: 1;
+    }
+    40% {
+        width: 56px;
+        height: 112px;
+        opacity: 1;
+    }
+    100% {
+        width: 56px;
+        height: 112px;
+        opacity: 1;
+    }
+}
+
 
 
 

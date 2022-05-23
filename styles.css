@@ -162,6 +162,81 @@ footer .back-btn {
   background: #e63663;
 }
 
+#check-wrapper {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#checkmark {
+  display: none;
+  position: relative;
+  content: '';
+  width: 56px;
+  height: 112px;
+  top: 50%;
+  left: 56px;
+  border-top: 12px solid #77DD77;
+  border-right: 12px solid #77DD77;
+  -webkit-transform: scaleX(-1) rotate(135deg);
+          transform: scaleX(-1) rotate(135deg);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-animation: check 1s ease;
+          animation: check 1s ease;
+}
+
+@-webkit-keyframes check {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    width: 56px;
+    height: 0px;
+    opacity: 1;
+  }
+  40% {
+    width: 56px;
+    height: 112px;
+    opacity: 1;
+  }
+  100% {
+    width: 56px;
+    height: 112px;
+    opacity: 1;
+  }
+}
+
+@keyframes check {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    width: 56px;
+    height: 0px;
+    opacity: 1;
+  }
+  40% {
+    width: 56px;
+    height: 112px;
+    opacity: 1;
+  }
+  100% {
+    width: 56px;
+    height: 112px;
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 800px) {
   body {
     height: 100%;
