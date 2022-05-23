@@ -23,8 +23,10 @@ window.onload = function() {
         var used_songs = [];
 
         var played = false;
-
+        
         var score = 0;
+
+        const YOUTUBE_API_KEY = "AIzaSyD0y37S_BBtUc2prvtPkgIM4aE7i77TIek"; //API KEY
 
         document.getElementById("game_over_screen").style = "null";
         let score_counters = document.getElementsByClassName("score-counter");
@@ -68,7 +70,6 @@ window.onload = function() {
         
         document.getElementById("demo").innerHTML = "IN GAME";
 
-        const YOUTUBE_API_KEY = "AIzaSyD0y37S_BBtUc2prvtPkgIM4aE7i77TIek"; //API KEY
 
         create_id = function(yt_url = String) {
             var id = yt_url.substr(-11);
@@ -78,11 +79,6 @@ window.onload = function() {
         
         fillData = function(choice = String, url) {
 
-            //var choices_viewcount = document.getElementsByClassName('viewCount');
-
-            //for (var i=0; i<choices_viewcount.length; i++) {
-            //    choices_viewcount[i].style.visibility = 'hidden';
-            //}
             var div = document.getElementById(choice);
             var viewcount = div.getElementsByClassName("viewCount")[0];
             viewcount.style.visibility = "hidden";
