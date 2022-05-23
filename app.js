@@ -26,8 +26,6 @@ window.onload = function() {
         
         var score = 0;
 
-        const YOUTUBE_API_KEY = "AIzaSyD0y37S_BBtUc2prvtPkgIM4aE7i77TIek"; //API KEY
-
         document.getElementById("game_over_screen").style = "null";
         let score_counters = document.getElementsByClassName("score-counter");
 
