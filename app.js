@@ -26,14 +26,8 @@ window.onload = function() {
         
         var score = 0;
 
-        //variables for html elements
-        const game_over_screen = document.getElementById("game_over_screen");
-        const score_counters = document.getElementsByClassName("score-counter");
-        const demo = document.getElementById("demo");
-        const viewCount_elem = document.getElementsByClassName("viewCount");
-        
-        game_over_screen.style = "null";
-        demo.innerHTML = "IN GAME";
+        document.getElementById("game_over_screen").style = "null";
+        let score_counters = document.getElementsByClassName("score-counter");
 
         for (var i=0; i<score_counters.length; i++) {
             score_counters[i].innerHTML = `Score: ${score}`;
@@ -42,7 +36,7 @@ window.onload = function() {
         function getRandomInt(max) {
             return Math.floor(Math.random() * max);
         }
-        
+
         get_song = function(choice = String, callback) {
             fetch("songs.json")
                 .then(response => response.json())
@@ -72,6 +66,7 @@ window.onload = function() {
 
         }
         
+        document.getElementById("demo").innerHTML = "IN GAME";
 
 
         create_id = function(yt_url = String) {
@@ -156,13 +151,13 @@ window.onload = function() {
 
         show_views = () => {
             //show viewcount for both MVs
-            viewCount_elem[0].innerHTML = `views: ${choice_1.views}`;
-            viewCount_elem[1].innerHTML = `views: ${choice_2.views}`;
+            document.getElementsByClassName("viewCount")[0].innerHTML = `views: ${choice_1.views}`;
+            document.getElementsByClassName("viewCount")[1].innerHTML = `views: ${choice_2.views}`;
 
-            //var choices = document.getElementsByClassName('viewCount');
+            var choices = document.getElementsByClassName('viewCount');
 
-            for (var i=0; i<viewCount_elem.length; i++) {
-                viewCount_elem[i].style.visibility = 'visible';
+            for (var i=0; i<choices.length; i++) {
+                choices[i].style.visibility = 'visible';
             }
 
 
@@ -171,8 +166,10 @@ window.onload = function() {
         win = async (choice) => {
 
             console.log("W");
-            score++;     
-    
+            score++;
+            
+            let score_counters = document.getElementsByClassName("score-counter");
+
             for (var i=0; i<score_counters.length; i++) {
                 score_counters[i].innerHTML = `Score: ${score}`;
             }
@@ -263,7 +260,7 @@ window.onload = function() {
                     played = true;
 
                     let title = choice_div.getElementsByClassName("title")[0].innerHTML;
-                    demo.innerHTML = title;
+                    document.getElementById("demo").innerHTML = title;
 
                     show_views();
                     
