@@ -193,7 +193,7 @@ window.onload = function() {
 
         game_over = () => {
             console.log("L");
-            document.getElementById("game_over_screen").style.visibility = "visible";
+            document.getElementById("game_over_screen").style.opacity = "1";
         }
 
         check_higer_views = function(choice) {

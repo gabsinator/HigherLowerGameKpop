@@ -77,11 +77,13 @@ body {
         margin: 1rem 5rem;
     
         img {
-            width: 400px;
+            width: 500px;
             height: auto;
         }
 
         .title {
+            width: 100%;
+            height: 42px;
             font-weight: bold;
         }
 
@@ -94,6 +96,7 @@ body {
             border-color: $purple;
 
             cursor: pointer;
+            transition: all 0.3s ease;
             
         }
 
@@ -131,7 +134,9 @@ body {
     justify-content: center;
     align-items: center;
 
-    visibility: hidden;
+    opacity: 0;
+
+    transition: 0.5s ease;
 
     #wrapper {
 
@@ -160,6 +165,7 @@ body {
             color: $purple;
 
             cursor: pointer;
+            transition: border-color 0.3s ease, color 0.3s ease;
         }
     }
         
@@ -302,6 +308,16 @@ footer {
         $color-grad4,
         $color-grad5
         );
+        
+    }
+
+    #choices-wrapper {
+        .choices {
+            img {
+                width: 400px;
+                height: auto;
+            }
+        }
     }
 
     .startScreen {

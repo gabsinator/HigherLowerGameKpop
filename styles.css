@@ -30,11 +30,13 @@ body #score {
 }
 
 #choices-wrapper .choices img {
-  width: 400px;
+  width: 500px;
   height: auto;
 }
 
 #choices-wrapper .choices .title {
+  width: 100%;
+  height: 42px;
   font-weight: bold;
 }
 
@@ -46,6 +48,8 @@ body #score {
 #choices-wrapper .choices:hover {
   border-color: #a700a7;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 #game_over_screen {
@@ -71,7 +75,9 @@ body #score {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 #game_over_screen #wrapper {
@@ -98,6 +104,8 @@ body #score {
   border-color: #a700a7;
   color: #a700a7;
   cursor: pointer;
+  -webkit-transition: border-color 0.3s ease, color 0.3s ease;
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 footer {
@@ -245,6 +253,10 @@ footer .back-btn {
     background-attachment: fixed;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#C3C1E6), color-stop(#D2C6E8), color-stop(#E1CCEB), color-stop(#F0D1ED), to(#FFD6EF));
     background-image: linear-gradient(#C3C1E6, #D2C6E8, #E1CCEB, #F0D1ED, #FFD6EF);
+  }
+  #choices-wrapper .choices img {
+    width: 400px;
+    height: auto;
   }
   .startScreen {
     width: 100%;
