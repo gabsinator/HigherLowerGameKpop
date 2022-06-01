@@ -26,7 +26,9 @@ window.onload = function() {
         
         var score = 0;
 
-        document.getElementById("game_over_screen").style = "null";
+        const game_over_screen = document.getElementById("game_over_screen");
+
+        game_over_screen.style = "null";
         let score_counters = document.getElementsByClassName("score-counter");
 
         for (var i=0; i<score_counters.length; i++) {
@@ -193,7 +195,9 @@ window.onload = function() {
 
         game_over = () => {
             console.log("L");
-            document.getElementById("game_over_screen").style.opacity = "1";
+
+            game_over_screen.style.visibility = "visible";
+            game_over_screen.style.opacity = "1";
         }
 
         check_higer_views = function(choice) {
