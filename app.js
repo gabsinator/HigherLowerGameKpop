@@ -153,8 +153,31 @@ window.onload = function() {
 
         show_views = () => {
             //show viewcount for both MVs
-            document.getElementsByClassName("viewCount")[0].innerHTML = `views: ${choice_1.views}`;
-            document.getElementsByClassName("viewCount")[1].innerHTML = `views: ${choice_2.views}`;
+            //document.getElementsByClassName("viewCount")[0].innerHTML = `views: ${choice_1.views}`;
+            //document.getElementsByClassName("viewCount")[1].innerHTML = `views: ${choice_2.views}`;
+            
+            document.getElementsByClassName("viewCount")[0].setAttribute('data-target', choice_1.views);
+            document.getElementsByClassName("viewCount")[1].setAttribute('data-target', choice_2.views);
+
+            // Selector
+            const counters = document.querySelectorAll('.viewCount');
+            // Main function
+            for(let n of counters) {
+                const updateCount = () => {
+                    const target = + n.getAttribute('data-target');
+                    const count = + n.innerText;
+                    const speed = 100; // change animation speed here
+                    const inc = target / speed;
+
+                    if(count < target) {
+                        n.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        n.innerText = `views: ${target}`;
+                    }
+                }
+                updateCount();
+            }
 
             var choices = document.getElementsByClassName('viewCount');
 
