@@ -29,6 +29,13 @@ window.onload = function() {
         const game_over_screen = document.getElementById("game_over_screen");
 
         game_over_screen.style = "null";
+
+        let cross = document.querySelectorAll('.cross');
+
+        for (var i=0; i<cross.length; i++) {
+            cross[i].style.display = "none";
+        }
+
         let score_counters = document.getElementsByClassName("score-counter");
 
         for (var i=0; i<score_counters.length; i++) {
@@ -218,6 +225,14 @@ window.onload = function() {
 
         game_over = () => {
             console.log("L");
+
+            let cross = document.querySelectorAll('.cross');
+
+            for (var i=0; i<cross.length; i++) {
+                cross[i].style.display = "block";
+            }
+
+            game_over_screen.style.transition = "0.5s ease 1s";
 
             game_over_screen.style.visibility = "visible";
             game_over_screen.style.opacity = "1";
