@@ -172,12 +172,13 @@ window.onload = function() {
             for(let n of counters) {
                 const updateCount = () => {
                     const target = + n.getAttribute('data-target');
-                    const count = + n.innerText;
+                    const count = + n.innerText.replace("views: ", "");
                     const speed = 100; // change animation speed here
                     const inc = target / speed;
 
                     if(count < target) {
-                        n.innerText = Math.ceil(count + inc);
+                        var r = Math.ceil(count + inc);
+                        n.innerText = `views: ${r}`;
                         setTimeout(updateCount, 1);
                     } else {
                         n.innerText = `views: ${target}`;
