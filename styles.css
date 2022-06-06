@@ -47,6 +47,7 @@ body #score {
 
 #choices-wrapper .choices:hover {
   border-color: #a700a7;
+  background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -274,6 +275,50 @@ footer .back-btn {
           animation: cross2 0.7s ease 0.1s forwards;
 }
 
+#credits-div {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
+  border: 2px solid #000;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom: none;
+  width: 500px;
+  text-align: center;
+  -webkit-animation: credits-box 1s forwards;
+          animation: credits-box 1s forwards;
+}
+
+#credits-div h3 {
+  margin-bottom: 0;
+}
+
+#credits-div p {
+  margin-top: 0;
+}
+
+#credits-div img {
+  -webkit-transform: translate(3px, 35%);
+          transform: translate(3px, 35%);
+}
+
+@-webkit-keyframes credits-box {
+  100% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+
+@keyframes credits-box {
+  100% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+
 @-webkit-keyframes cross1 {
   0% {
     height: 0;
@@ -323,14 +368,35 @@ footer .back-btn {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#C3C1E6), color-stop(#D2C6E8), color-stop(#E1CCEB), color-stop(#F0D1ED), to(#FFD6EF));
     background-image: linear-gradient(#C3C1E6, #D2C6E8, #E1CCEB, #F0D1ED, #FFD6EF);
   }
+  body #demo {
+    display: none;
+  }
+  body #score {
+    text-align: center;
+    padding: 3px;
+    margin-top: 0;
+    background-color: rgba(167, 0, 167, 0.2);
+  }
+  #choices-wrapper .choices {
+    margin: 3.2rem auto;
+  }
   #choices-wrapper .choices img {
     width: 400px;
     height: auto;
   }
   .startScreen {
     width: 100%;
-    border: none;
     font-size: 3.5vw;
+  }
+  #game_over_screen {
+    height: 140px;
+    font-size: 1.5rem;
+    background-image: none;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  #game_over_screen #wrapper {
+    font-size: small;
+    width: 170px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

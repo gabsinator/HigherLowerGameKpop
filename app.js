@@ -21,11 +21,11 @@ window.onload = function() {
         };
 
         var used_songs = [];
-
         var played = false;
-        
         var score = 0;
 
+        const footer = document.querySelector("footer");
+        const creds_box = document.getElementById("credits-div");
         const game_over_screen = document.getElementById("game_over_screen");
 
         game_over_screen.style = "null";
@@ -44,6 +44,18 @@ window.onload = function() {
 
         function getRandomInt(max) {
             return Math.floor(Math.random() * max);
+        }
+
+        reset_creds = function() {
+            creds_box.style = "null";
+            footer.getElementsByClassName("credits-btn")[0].style.visibility = "visible";
+
+        }
+        reset_creds();
+
+        show_creds = function() {
+            creds_box.style.display = "inline";
+            footer.getElementsByClassName("credits-btn")[0].style.visibility = "hidden";
         }
 
         get_song = function(choice = String, callback) {
