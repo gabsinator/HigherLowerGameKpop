@@ -51,7 +51,7 @@ window.onload = function() {
             footer.getElementsByClassName("credits-btn")[0].style.visibility = "visible";
 
         }
-        reset_creds();
+        
 
         show_creds = function() {
             creds_box.style.display = "inline";
@@ -97,6 +97,8 @@ window.onload = function() {
 
         
         fillData = function(choice = String, url) {
+
+            
 
             var div = document.getElementById(choice);
             var viewcount = div.getElementsByClassName("viewCount")[0];
@@ -313,6 +315,7 @@ window.onload = function() {
                 else {
                     //you played already
                     played = true;
+                    reset_creds();
 
                     let title = choice_div.getElementsByClassName("title")[0].innerHTML;
                     document.getElementById("demo").innerHTML = title;

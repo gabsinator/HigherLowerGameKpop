@@ -37,6 +37,8 @@ body {
     font-family: $basic-font;
     font-weight: normal;
 
+    overflow: hidden;
+
     #score {
         font-size: 22px;
     }
@@ -57,6 +59,8 @@ body {
     //border: $basic-border;
 
     .choices {
+
+        width: 32%;
         
 
         border: $basic-border;
@@ -65,12 +69,19 @@ body {
         display: inline-block;
         text-align: center;
     
-        padding: 1rem;
+        //padding: 1rem;
+        padding: 0 0 1rem 0;
         margin: 1rem 5rem;
     
         img {
-            width: 500px;
+            //width: 500px;
+            width: 100%;
             height: auto;
+
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+
+            border-bottom: $basic-border;
         }
 
         .title {
@@ -90,6 +101,11 @@ body {
 
             cursor: pointer;
             transition: all 0.3s ease;
+            
+            img {
+                border-bottom-color: $purple;
+                transition: all 0.3s ease;
+            }
             
         }
 
@@ -243,9 +259,15 @@ footer {
 
     display: inline-block;
 
+    z-index: -1;
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#check-circle {
+    display: none;
 }
 
 #checkmark {
@@ -273,22 +295,20 @@ footer {
     0% {
         height: 0;
         width: 0;
-        opacity: 1;
     }
     20% {
         width: 56px;
         height: 0px;
-        opacity: 1;
+
     }
     40% {
         width: 56px;
         height: 112px;
-        opacity: 1;
+
     }
     100% {
         width: 56px;
         height: 112px;
-        opacity: 1;
     }
 }
 
@@ -406,7 +426,7 @@ footer {
 
 //we use responsive web design :D
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 770px) {
 
     body {
         height: 100%;
@@ -436,15 +456,44 @@ footer {
 
     #choices-wrapper {
         .choices {
+            padding: 0;
             
-            margin: 3.2rem auto;
+            width: 90%;
+            margin: 0 auto;
             
             img {
-                width: 400px;
+                width: 100%;
                 height: auto;
+
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
 
             }
         }
+
+        #choice-1 {
+
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+
+
+            &:hover {
+                border-bottom: $basic-border;
+            }
+        }
+
+        #choice-2 {
+            border-top: 0;
+
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+
+            img {
+                border-radius: 0;
+            }
+
+        }
+
     }
 
     .startScreen {
@@ -467,6 +516,126 @@ footer {
     
             width: 170px;
         }
+    }
+
+    #check-circle {
+        display: inline;
+        position: absolute;
+
+        width: 82px;
+        height: 82px;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        background-color: $black;
+
+        border: $basic-border;
+        border-radius: 50%;
+    }
+
+    #check-wrapper {
+
+        z-index: auto;
+    
+        width: 125px;
+        height: 125px;
+
+
+        #checkmark {
+        
+            width: 24px;
+            height: 50px;
+        
+            top: 50%;
+            left: 28px;
+        
+        
+            border-top: 8px solid $check-green;
+            border-right: 8px solid $check-green;
+        
+            animation: check 1s ease;
+        }
+
+        @keyframes check {
+            0% {
+                height: 0;
+                width: 0;
+            }
+            20% {
+                width: 24px;
+                height: 0px;
+        
+            }
+            40% {
+                width: 24px;
+                height: 50px;
+        
+            }
+            100% {
+                width: 24px;
+                height: 50px;
+            }
+        }
+
+    }
+
+    #cross-wrapper {
+    
+        width: 60px;
+        height: 60px;
+
+        #cross1 {
+    
+            width: 26px;
+            height: 60px;
+        
+            border-right: 8px solid $cross-red;
+        
+            animation: cross1 0.5s ease;
+        }
+        
+        #cross2 {
+        
+            width: 60px;
+            height: 26px;
+        
+            bottom: 0;
+            right: 0;
+            
+            animation: cross2 0.7s ease 0.1s forwards;
+            
+        }
+
+        @keyframes cross1 {
+            0% {
+                height: 0;
+        
+            }
+        
+            100% {
+        
+                height: 60px;
+        
+            }
+        }
+        
+        @keyframes cross2 {
+            0% {
+                border-top: 8px solid $cross-red;
+                width: 0;
+        
+            }
+        
+            100% {
+                border-top: 8px solid $cross-red;
+                width: 60px;
+        
+            }
+        }
+    
     }
 
 }
