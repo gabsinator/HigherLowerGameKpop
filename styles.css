@@ -386,6 +386,8 @@ footer .back-btn {
     background-color: rgba(167, 0, 167, 0.2);
   }
   #choices-wrapper .choices {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     padding: 0;
     width: 90%;
     margin: 0 auto;
@@ -393,23 +395,49 @@ footer .back-btn {
   #choices-wrapper .choices img {
     width: 100%;
     height: auto;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+  }
+  #choices-wrapper .choices .title {
+    height: auto;
   }
   #choices-wrapper #choice-1 {
+    border-bottom: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
-  #choices-wrapper #choice-1:hover {
-    border-bottom: 2px solid #000;
+  #choices-wrapper #choice-1 .thumbnail-wrapper {
+    -webkit-box-ordinal-group: 3;
+  }
+  #choices-wrapper #choice-1 .thumbnail-wrapper .thumbnail {
+    vertical-align: top;
+    border-radius: 0;
+    border-bottom: 0;
+    border-top: 2px solid #000;
+  }
+  #choices-wrapper #choice-1 .thumbnail-wrapper .thumbnail:hover {
+    border-top-color: #a700a7;
+  }
+  #choices-wrapper #choice-1 .title {
+    -webkit-box-ordinal-group: 2;
+  }
+  #choices-wrapper #choice-1 .viewCount {
+    -webkit-box-ordinal-group: 1;
+    margin-top: 1rem;
+  }
+  #choices-wrapper #choice-1:hover ~ #choice-2 {
+    border-top-color: #a700a7;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
   #choices-wrapper #choice-2 {
-    border-top: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
   #choices-wrapper #choice-2 img {
     border-radius: 0;
+  }
+  #choices-wrapper #choice-2 .viewCount {
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
   .startScreen {
     width: 100%;
@@ -446,8 +474,8 @@ footer .back-btn {
   #check-wrapper #checkmark {
     width: 24px;
     height: 50px;
-    top: 50%;
-    left: 28px;
+    top: 51%;
+    left: 30px;
     border-top: 8px solid #77DD77;
     border-right: 8px solid #77DD77;
     -webkit-animation: check 1s ease;

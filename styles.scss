@@ -456,6 +456,10 @@ footer {
 
     #choices-wrapper {
         .choices {
+            display: -webkit-box;
+      
+            -webkit-box-orient: vertical;
+
             padding: 0;
             
             width: 90%;
@@ -465,31 +469,67 @@ footer {
                 width: 100%;
                 height: auto;
 
-                border-top-left-radius: 12px;
-                border-top-right-radius: 12px;
 
             }
+
+            .title {
+                height: auto;
+            }
+
         }
 
         #choice-1 {
+            border-bottom: 0;
 
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
 
+            .thumbnail-wrapper {
 
-            &:hover {
-                border-bottom: $basic-border;
+                -webkit-box-ordinal-group: 3;
+
+                .thumbnail {
+                    vertical-align: top;
+                    border-radius: 0;
+
+                    border-bottom: 0;
+                    border-top: $basic-border;
+
+                    &:hover {
+                        border-top-color: $purple;
+                    }
+                }
             }
+            
+
+            .title {
+                -webkit-box-ordinal-group: 2;
+            }
+
+            .viewCount {
+                -webkit-box-ordinal-group: 1;
+                margin-top: 1rem;
+            }
+
+            &:hover ~ #choice-2 {
+                border-top-color: $purple;
+                transition: all 0.3s ease;
+            }
+
         }
 
         #choice-2 {
-            border-top: 0;
 
             border-top-left-radius: 0;
             border-top-right-radius: 0;
 
             img {
                 border-radius: 0;
+            }
+
+            .viewCount {
+                margin-top: 0;
+                margin-bottom: 1rem;
             }
 
         }
@@ -548,10 +588,9 @@ footer {
         
             width: 24px;
             height: 50px;
-        
-            top: 50%;
-            left: 28px;
-        
+
+            top: 51%;
+            left: 30px;
         
             border-top: 8px solid $check-green;
             border-right: 8px solid $check-green;
