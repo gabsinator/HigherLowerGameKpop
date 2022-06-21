@@ -27,6 +27,11 @@ window.onload = function() {
         const footer = document.querySelector("footer");
         const creds_box = document.getElementById("credits-div");
         const game_over_screen = document.getElementById("game_over_screen");
+        const my_switch = document.getElementsByClassName("switch")[0];
+        const my_switch_input = my_switch.getElementsByTagName("input")[0];
+
+        const correct_sound = new Audio("/res/sound/correct.mp3");
+        const incorrect_sound = new Audio("/res/sound/incorrect.wav");
 
         game_over_screen.style = "null";
 
@@ -57,6 +62,22 @@ window.onload = function() {
             creds_box.style.display = "inline";
             footer.getElementsByClassName("credits-btn")[0].style.visibility = "hidden";
         }
+
+        updateSound = function() {
+            if(my_switch_input.checked) {
+                
+                correct_sound.volume = 0.2;
+                incorrect_sound.volume = 0.2;
+            } else {
+
+                correct_sound.volume = 0;
+                incorrect_sound.volume = 0;
+            }
+        }
+
+        my_switch.addEventListener("click", updateSound);
+
+        updateSound();
 
         get_song = function(choice = String, callback) {
             fetch("songs.json")
@@ -222,6 +243,7 @@ window.onload = function() {
             }
 
             document.getElementById("checkmark").style.display = "block";
+            correct_sound.play();
 
             await delay(3000);
 
@@ -242,6 +264,7 @@ window.onload = function() {
             console.log("L");
 
             let cross = document.querySelectorAll('.cross');
+            incorrect_sound.play();
 
             for (var i=0; i<cross.length; i++) {
                 cross[i].style.display = "block";

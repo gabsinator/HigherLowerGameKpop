@@ -45,6 +45,76 @@ body {
     
 }
 
+
+//toggle switch template form W3SCHOOLS
+//https://www.w3schools.com/howto/howto_css_switch.asp
+/* The switch - the box around the slider */
+.switch {
+    position: absolute;
+    right: 8px;
+    top: 1.4rem;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch p {
+    margin-top: 4px;
+    font-size: 22px;
+    transform: translateX(-120%);
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 34px;
+    background-color: $black;
+    opacity: 0.6;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: $purple;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px $purple;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+
 #choices-wrapper {
 
     position: absolute;
@@ -450,6 +520,11 @@ footer {
 
             background-color: rgba(167, 0, 167, 0.2);
         }
+
+        .switch {
+            display: none;
+        }
+
     }
 
     #choices-wrapper {
@@ -470,6 +545,7 @@ footer {
 
             .thumbnail-wrapper {
                 height: 80%;
+                
             }
             
             img {
@@ -477,6 +553,8 @@ footer {
                 height: 100%;
                 //height: 32em;
                 object-fit: cover;
+
+                //clip-path: inset(10% 0 10% 0);
 
             }
 
@@ -487,6 +565,8 @@ footer {
         }
 
         #choice-1 {
+            padding-bottom: 2px;
+
             -webkit-box-pack: end;
 
             border-bottom: 0;
